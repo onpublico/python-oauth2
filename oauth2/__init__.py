@@ -811,7 +811,7 @@ class SignatureMethod(object):
         """Returns whether the given signature is the correct signature for
         the given consumer and token signing the given request."""
         built = self.sign(request, consumer, token)
-        return built == signature
+        return built == signature.encode('utf-8')
 
 
 class SignatureMethod_HMAC_SHA1(SignatureMethod):
